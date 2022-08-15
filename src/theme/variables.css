@@ -4,28 +4,28 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #0f62fe; /**0f62fe**/
-  --ion-color-primary-rgb: 15, 98, 254; /**15, 98, 254**/
+  --ion-color-primary: #0f62fe; /*0f62fe*/
+  --ion-color-primary-rgb: 15, 98, 254; /*15, 98, 254*/
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #0043ce; /**0043ce**/
-  --ion-color-primary-tint: #4589ff; /**4589ff**/
+  --ion-color-primary-shade: #0043ce; /*0043ce*/
+  --ion-color-primary-tint: #4589ff; /*4589ff*/
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
-  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary: #78A9FF; /*78A9FF*/
+  --ion-color-secondary-rgb: 120, 169, 255; /*120, 169, 255*/
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #36abe0;
-  --ion-color-secondary-tint: #50c8ff;
+  --ion-color-secondary-shade: #4589ff; /*4589ff*/
+  --ion-color-secondary-tint: #a6c8ff; /*a6c8ff*/
 
   /** tertiary **/
-  --ion-color-tertiary: #5260ff;
-  --ion-color-tertiary-rgb: 82, 96, 255;
+  --ion-color-tertiary: #A6C8FF; /*A6C8FF*/
+  --ion-color-tertiary-rgb: 166, 200, 255; /*166, 200, 255*/
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #4854e0;
-  --ion-color-tertiary-tint: #6370ff;
+  --ion-color-tertiary-shade: #78a9ff; /*78a9ff*/
+  --ion-color-tertiary-tint: #d0e2ff; /*d0e2ff*/
 
   /** success **/
   --ion-color-success: #2dd36f;
@@ -68,12 +68,12 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
-  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light: #F5F5F5; /*F5F5F5*/
+  --ion-color-light-rgb: 245, 245, 245; /*245, 245, 245*/
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
-  --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light-shade: #ECECEC; /*ECECEC*/
+  --ion-color-light-tint: #FFFFFF; /*FFFFFF*/
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,26 +83,30 @@ http://ionicframework.com/docs/theming/ */
    */
 
   body {
-    --ion-color-primary: #f4f5f8;
-    --ion-color-primary-rgb: 244, 245, 248;
-    --ion-color-primary-contrast: #000000;
-    --ion-color-primary-contrast-rgb: 0, 0, 0;
-    --ion-color-primary-shade: #d7d8da;
-    --ion-color-primary-tint: #f5f6f9;
+    
+     /** primary **/
+    --ion-color-primary: #0f62fe; /*0f62fe*/
+    --ion-color-primary-rgb: 15, 98, 254; /*15, 98, 254*/
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #0043ce; /*0043ce*/
+    --ion-color-primary-tint: #4589ff; /*4589ff*/
 
-    --ion-color-secondary: #50c8ff;
-    --ion-color-secondary-rgb: 80,200,255;
+    /** secondary **/
+    --ion-color-secondary: #78A9FF; /*78A9FF*/
+    --ion-color-secondary-rgb: 120, 169, 255; /*120, 169, 255*/
     --ion-color-secondary-contrast: #ffffff;
-    --ion-color-secondary-contrast-rgb: 255,255,255;
-    --ion-color-secondary-shade: #46b0e0;
-    --ion-color-secondary-tint: #62ceff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #4589ff; /*4589ff*/
+    --ion-color-secondary-tint: #a6c8ff; /*a6c8ff*/
 
-    --ion-color-tertiary: #6a64ff;
-    --ion-color-tertiary-rgb: 106,100,255;
+    /** tertiary **/
+    --ion-color-tertiary: #A6C8FF; /*A6C8FF*/
+    --ion-color-tertiary-rgb: 166, 200, 255; /*166, 200, 255*/
     --ion-color-tertiary-contrast: #ffffff;
-    --ion-color-tertiary-contrast-rgb: 255,255,255;
-    --ion-color-tertiary-shade: #5d58e0;
-    --ion-color-tertiary-tint: #7974ff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #78a9ff; /*78a9ff*/
+    --ion-color-tertiary-tint: #d0e2ff; /*d0e2ff*/
 
     --ion-color-success: #2fdf75;
     --ion-color-success-rgb: 47,223,117;
