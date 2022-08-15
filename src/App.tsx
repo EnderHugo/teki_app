@@ -35,9 +35,16 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import UIContext from "./my-context";
+
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+
+  const { showTabs } = React.UseContext(UIContext);
+
+  let tabStyle = showTabs ? undefined : { display : "none" };
+
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -55,10 +62,10 @@ const App: React.FC = () => (
             <Tab3 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/Login" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" style={tabStyle}>
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon icon={triangle} />
             <IonLabel>Tab 1</IonLabel>
@@ -75,6 +82,6 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+};
 
 export default App;

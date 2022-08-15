@@ -2,7 +2,20 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import './Login.css';
 
+import UIContext from "../my-context";
+
 const Login: React.FC = () => {
+  const {setShowTabs} = React.useContext(UIContext);
+
+  useEffect(() => {
+    setShowTabs(false);
+
+    return () => {
+      setShowTabs(true);
+    };
+  });
+
+
   return (
     <IonPage>
       <IonHeader>
