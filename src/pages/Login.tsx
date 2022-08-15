@@ -13,7 +13,7 @@ const Login: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
+            <IonTitle size="large">Login</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Login page" />
@@ -22,4 +22,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Login;
