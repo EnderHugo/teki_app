@@ -10,12 +10,24 @@ import {
   IonToast,
   IonText,
   IonPage,
-  IonContent, } from '@ionic/react';
+  IonContent,
+  IonNavLink,
+  IonRow,
+  IonFooter,
+  IonIcon,
+  useIonViewWillEnter, } from '@ionic/react';
 
 
 import ExploreContainer from '../../components/ExploreContainer';
-import './Login.css';
+import './tablessPages.css';
 import React, { useEffect, useState } from 'react';
+import { IonReactRouter } from '@ionic/react-router';
+import { logoFacebook, logoGoogle } from 'ionicons/icons';
+import { hideTabs } from '../../App';
+
+const HideTab = () => {
+  useIonViewWillEnter(() => hideTabs())
+}
 
 const Login = () => {
   /*const { store } = React.useContext(MobXProviderContext);
@@ -24,7 +36,7 @@ const Login = () => {
   const [email, setEmail] = useState("test@test.com");
   const [password, setPassword] = useState("");
   const [errorInfo, setErrorInfo] = useState({});
-
+  
   /*const _doLogin = async () => {
     try {
       let r = await store.doLogin(email, password);
@@ -40,10 +52,9 @@ const Login = () => {
   };*/
 
   return (
-    
     <IonPage>
       <IonHeader>
-        <IonToolbar color="light">
+        <IonToolbar color="secondary">
           <IonButtons slot="start" />
           <IonTitle>Login</IonTitle>
         </IonToolbar>
@@ -53,8 +64,21 @@ const Login = () => {
           {/*initializationError && initializationError.message*/}
         </IonText> 
 
+        <div style={{"height":"100px"}}>
+        </div>
+        <br/>
+        
+        <div className="ion-text-center">
+        <IonText>Logo Here</IonText>
+        </div>
+
+        <br/>
+
+        <div style={{"height":"50px"}}>
+        </div>
+
         <IonItem>
-          <IonLabel position="floating">Email Address</IonLabel>
+          <IonLabel position="floating">Email</IonLabel>
           <IonInput
             type="email"
             onIonChange={(e) => {
@@ -64,7 +88,7 @@ const Login = () => {
           />
         </IonItem>
         <IonItem>
-          <IonLabel position="floating">Password</IonLabel>
+          <IonLabel position="floating">Senha</IonLabel>
           <IonInput
             type="password"
             onIonChange={(e) => {
@@ -87,16 +111,22 @@ const Login = () => {
           >
             Login {/*isAuth ? "Logged In" : "Login"*/}
           </IonButton>
-          <IonButton
-            expand="full"
-            style={{ margin: 14 }}
-            onClick={(e) => {
-              e.preventDefault();
-              /*history.push("/register");*/
-            }}
-          >
-            Create Account
+          
+          <div className="ion-text-center">
+
+          <br/>
+          ou
+          <br/>
+          <br/>
+          <IonButton shape='round' color={"tertiary"} style={{"width":"260px"}}>
+            <IonIcon icon={logoGoogle} /> &nbsp; Entre com google
           </IonButton>
+          <br/>
+          <IonButton shape='round' color={"tertiary"} style={{"width":"260px"}}>
+            <IonIcon icon={logoFacebook} /> &nbsp; Entre com facebook
+          </IonButton>
+          </div>
+
         </div>
         <IonToast
           color="danger"
@@ -107,6 +137,14 @@ const Login = () => {
           duration={2000}
         />
       </IonContent>
+
+      <IonFooter>
+              <div className="ion-text-right">
+          <IonItem href='/Register' style={{"padding-left":"30px","padding-right":"30px","text-align":"center"}}>
+                Não tem uma conta? &nbsp; <b>Cadastre-se</b>
+          </IonItem> 
+              </div>
+      </IonFooter>
     </IonPage>
   );
 };

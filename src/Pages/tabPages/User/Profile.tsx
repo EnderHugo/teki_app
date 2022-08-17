@@ -1,28 +1,25 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
-import './tablessPages.css';
-import React, { useEffect } from 'react';
+import ExploreContainer from '../../../components/ExploreContainer';
+import '../tabPages.css';
 
-const Login: React.FC = () => {
-
-
+const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Register</IonTitle>
+          <IonTitle>Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Register</IonTitle>
+            <IonTitle size="large">Profile</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Register page" />
+        <ExploreContainer name="Profile page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Login;
+export default Profile;

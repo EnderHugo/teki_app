@@ -10,12 +10,16 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { calendarOutline, homeOutline, personOutline, chatboxOutline } from 'ionicons/icons';
 import Login from './Pages/tablessPages/Login';
 import Register from './Pages/tablessPages/Register'
-import Tab1 from './Pages/tabPages/Tab1';
-import Tab2 from './Pages/tabPages/Tab2';
-import Tab3 from './Pages/tabPages/Tab3';
+
+
+/* Change /user/ to a variable depending on current login */
+import Home from './Pages/tabPages/User/Home'; 
+import Schedule from './Pages/tabPages/User/Schedule';
+import Profile from './Pages/tabPages/User/Profile';
+import Chat from './Pages/tabPages/User/Chat';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -52,7 +56,7 @@ const PrivateRoutes = () => {
 const PublicRoutes = () => {
   return (
     <IonReactRouter>
-      <Route path="/tabs" component={Tab1} />
+      <Route path="/tabs" component={Home} />
       <Route path="/" render={() => <Redirect to="/tabs/home" />} />
     </IonReactRouter>
   );
@@ -63,40 +67,69 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
+
         <IonRouterOutlet>
           <Route exact path="/Login">
             <Login />
           </Route>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/Register">
+            <Register />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+
+          <Route exact path="/Home">
+            <Home />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route exact path="/Schedule">
+            <Schedule />
           </Route>
+          <Route path="/Profile">
+            <Profile />
+          </Route>
+          <Route path="/Chat">
+            <Chat />
+          </Route>
+
           <Route exact path="/">
             <Redirect to="/Login" />
           </Route>
         </IonRouterOutlet>
+
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="home" href="/Home">
+            <IonIcon icon={homeOutline} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="schedule" href="/Schedule">
+            <IonIcon icon={calendarOutline} />
+            <IonLabel>Schedule</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="profile" href="/Profile">
+            <IonIcon icon={personOutline} />
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="chat" href="/Chat">
+            <IonIcon icon={chatboxOutline} />
+            <IonLabel>Chat</IonLabel>
           </IonTabButton>
         </IonTabBar>
+        
       </IonTabs>
     </IonReactRouter>
   </IonApp>
 );
+
+export function hideTabs() {
+  const tabsEl = document.querySelector('ion-tab-bar');
+  if (tabsEl) {
+    tabsEl.hidden = true;
+  }
+}
+
+export function showTabs() {
+  const tabsEl = document.querySelector('ion-tab-bar');
+  if (tabsEl) {
+    tabsEl.hidden = false;
+  }
+}
 
 export default App;
