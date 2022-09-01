@@ -33,6 +33,7 @@ const Login = () => {
   /*const { store } = React.useContext(MobXProviderContext);
   let { isAuth, initializationError } = store;
   const history = useHistory();*/
+  HideTab();
   const [email, setEmail] = useState("test@test.com");
   const [password, setPassword] = useState("");
   const [errorInfo, setErrorInfo] = useState({});
