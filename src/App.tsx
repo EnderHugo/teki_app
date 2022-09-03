@@ -11,8 +11,10 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { calendarOutline, homeOutline, personOutline, chatboxOutline } from 'ionicons/icons';
+
 import Login from './Pages/tablessPages/Login';
 import Register from './Pages/tablessPages/Register'
+import RegisterUser from './Pages/tablessPages/registerUser';
 
 
 /* Change /user/ to a variable depending on current login */
@@ -48,6 +50,7 @@ const PrivateRoutes = () => {
         {/****** AUTH CREATE ACCOUNT */}
         <Route path="/login" component={Login} exact={true} />
         <Route path="/register" component={Register} exact={true} />
+        <Route path="/registerUser" component={RegisterUser} exact={true} />
         <Route path="/" render={() => <Redirect to="/login" />} />
       </IonRouterOutlet>
     </IonReactRouter>
@@ -75,6 +78,10 @@ const App: React.FC = () => (
           <Route exact path="/Register">
             <Register />
           </Route>
+          <Route exact path="/registerUser">
+            <RegisterUser />
+          </Route>
+
 
           <Route exact path="/Home">
             <Home />
