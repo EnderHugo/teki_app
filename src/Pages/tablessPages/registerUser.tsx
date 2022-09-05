@@ -10,8 +10,10 @@ const HideTab = () => {
 }
 
 const Register: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
+  const [showToast1, setShowToast] = useState(false);
   const [showToast2, setShowToast2] = useState(false);
+  const [showToast3, setShowToast3] = useState(false);
+  const [showToast4, setShowToast4] = useState(false);
 
   const listenerOut = useRef<null | HTMLParagraphElement>(null);
   const [email, setEmail] = useState("test@test.com");
@@ -32,6 +34,27 @@ const Register: React.FC = () => {
   }, []);
   
   const registerUser = () => {
+    if (email == "" || username == "" || cellphone == ""){
+      setShowToast(true);
+    }
+    else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email + "")){
+      setShowToast3(true);
+      return;
+    }
+    else if (password1 != password2 && password1 != "" && password2 != "")
+    {
+      setShowToast2(true);
+      return;
+    }
+    else if (password1 === password2  && password1 != "" && password2 != "")
+    {
+      setPassword(password1)
+    }
+    else if (password == "")
+    {
+      setShowToast2(true);
+      return;
+    }
     console.log("register user")
   }
 
@@ -60,7 +83,6 @@ const Register: React.FC = () => {
               name="username"  
             />
         </IonItem>
-        <br/>
         <IonItem>
             <IonLabel position="floating">Email</IonLabel>
             <IonInput
@@ -71,8 +93,20 @@ const Register: React.FC = () => {
               }}
               name="email"  
             />
+            
         </IonItem>
-        <br/>
+        <IonItem>
+            <IonLabel position="floating">Telefone</IonLabel>
+            <IonInput
+              type="tel"
+              pattern='tel'
+              onIonChange={(e) => {
+                setCellphone(e.detail.value + "");
+              }}
+              name="cellphone"  
+            />
+            
+        </IonItem>
         <IonItem>
             <IonLabel position="floating">Senha</IonLabel>
             <IonInput
@@ -82,14 +116,6 @@ const Register: React.FC = () => {
                 if (password1 != "")
                 {
                   setEnablePass2(false);
-                }
-                if (password1 != password2 && password1 != "" && password2 != "")
-                {
-                  //setShowToast2(true);
-                }
-                else if (password1 === password2  && password1 != "" && password2 != "")
-                {
-                  setPassword(password1)
                 }
               }}
               name="password"
@@ -102,23 +128,16 @@ const Register: React.FC = () => {
               disabled={enablePass2}
               onIonChange={(e) => {
                 setPassword2(e.detail.value + "");
-                if (password1 != password2)
-                {
-                  //setShowToast2(true);
-                }
-                else if (password1 === password2)
-                {
-                  setPassword(password2)
-                }
               }}
               name="password"
             />
+            
         </IonItem>
 
       </IonContent>
 
       <IonFooter>
-        <IonToast isOpen={showToast}
+        <IonToast isOpen={showToast1}
           onDidDismiss={() => setShowToast(false)}
           message="Preencha todos os campos."
           duration={500}
@@ -127,6 +146,18 @@ const Register: React.FC = () => {
         <IonToast isOpen={showToast2}
           onDidDismiss={() => setShowToast2(false)}
           message="Senha não bate com a confirmação."
+          duration={500}
+          color="warning"
+        />
+        <IonToast isOpen={showToast3}
+          onDidDismiss={() => setShowToast3(false)}
+          message="Email invalido."
+          duration={500}
+          color="warning"
+        />
+        <IonToast isOpen={showToast4}
+          onDidDismiss={() => setShowToast4(false)}
+          message="Senha inválida."
           duration={500}
           color="warning"
         />
