@@ -1,5 +1,4 @@
-import { AccordionGroupCustomEvent, IonAccordion, IonAccordionGroup, IonButton, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToast, IonToolbar, useIonViewWillEnter } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
+import { AccordionGroupCustomEvent, IonAccordion, IonAccordionGroup, IonButton, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonToast, useIonViewWillEnter } from '@ionic/react';
 import './tablessPages.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { hideTabs } from '../../App';

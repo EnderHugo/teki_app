@@ -1,8 +1,7 @@
-import { AccordionGroupCustomEvent, IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonTitle, IonToast, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonTitle, IonToast, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import './tablessPages.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { hideTabs } from '../../App';
-import { business, construct, person, personAddOutline, terminal } from 'ionicons/icons';
 import { useHistory } from 'react-router';
 
 const HideTab = () => {
@@ -113,7 +112,7 @@ const Register: React.FC = () => {
               type="password"
               onIonChange={(e) => {
                 setPassword1(e.detail.value + "");
-                if (password1 != "")
+                if (password1 !== "")
                 {
                   setEnablePass2(false);
                 }

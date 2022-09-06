@@ -11,17 +11,12 @@ import {
   IonText,
   IonPage,
   IonContent,
-  IonNavLink,
-  IonRow,
   IonFooter,
   IonIcon,
   useIonViewWillEnter, } from '@ionic/react';
 
-
-import ExploreContainer from '../../components/ExploreContainer';
 import './tablessPages.css';
-import React, { useEffect, useState, useContext, createContext } from 'react';
-import { IonReactRouter } from '@ionic/react-router';
+import React, { useState } from 'react';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { hideTabs } from '../../App';
 import { useHistory } from 'react-router';
