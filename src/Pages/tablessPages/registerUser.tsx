@@ -34,23 +34,23 @@ const Register: React.FC = () => {
   }, []);
   
   const registerUser = () => {
-    if (email == "" || username == "" || cellphone == ""){
+    if (email === "" || username === "" || cellphone === ""){
       setShowToast(true);
     }
     else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email + "")){
       setShowToast3(true);
       return;
     }
-    else if (password1 != password2 && password1 != "" && password2 != "")
+    else if (password1 !== password2 && password1 !== "" && password2 !== "")
     {
       setShowToast2(true);
       return;
     }
-    else if (password1 === password2  && password1 != "" && password2 != "")
+    else if (password1 === password2  && password1 !== "" && password2 !== "")
     {
       setPassword(password1)
     }
-    else if (password == "")
+    else if (password === "")
     {
       setShowToast2(true);
       return;

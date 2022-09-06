@@ -1,4 +1,4 @@
-import { IonContent, IonDatetime, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonDatetime, IonHeader, IonPage} from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import * as swiper from 'swiper';
 import 'swiper/css';

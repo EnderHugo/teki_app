@@ -10,8 +10,6 @@ const ShowTab = () => {
   useIonViewWillEnter(() => showTabs())
 }
 
-
-
 const Home: React.FC = () => {
 
   showTabs();
