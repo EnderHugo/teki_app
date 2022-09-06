@@ -1,9 +1,8 @@
-import { IonContent, IonHeader, IonLabel, IonPage, IonSlide, IonSlides, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonLabel, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import { showTabs } from '../../../App';
-import ExploreContainer from '../../../components/ExploreContainer';
 import '../tabPages.css';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y, EffectCards } from 'swiper';
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import "swiper/css/pagination";
 

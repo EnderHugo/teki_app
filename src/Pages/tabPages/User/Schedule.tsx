@@ -1,9 +1,8 @@
 import { IonContent, IonDatetime, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y, EffectCards } from 'swiper';
+import * as swiper from 'swiper';
 import 'swiper/css';
 import "swiper/css/navigation";
-import ExploreContainer from '../../../components/ExploreContainer';
 import '../tabPages.css';
 
 
@@ -13,7 +12,7 @@ const Schedule: React.FC = () => {
       <IonHeader id='header'>
         <Swiper 
         navigation={true} 
-        modules={[Navigation]} 
+        modules={[swiper.Navigation]} 
         className="mySwiper"
         >
           <SwiperSlide>Slide 1</SwiperSlide>
