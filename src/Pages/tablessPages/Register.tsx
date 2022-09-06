@@ -3,7 +3,7 @@ import ExploreContainer from '../../components/ExploreContainer';
 import './tablessPages.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { hideTabs } from '../../App';
-import { business, construct, person, personAddOutline, terminal } from 'ionicons/icons';
+import { business, person, terminal } from 'ionicons/icons';
 import { useHistory } from 'react-router';
 
 const HideTab = () => {

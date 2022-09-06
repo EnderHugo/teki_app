@@ -20,37 +20,27 @@ import {
 
 import ExploreContainer from '../../components/ExploreContainer';
 import './tablessPages.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, createContext } from 'react';
 import { IonReactRouter } from '@ionic/react-router';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { hideTabs } from '../../App';
+import { useHistory } from 'react-router';
+
 
 const HideTab = () => {
   useIonViewWillEnter(() => hideTabs())
 }
 
 const Login = () => {
-  /*const { store } = React.useContext(MobXProviderContext);
-  let { isAuth, initializationError } = store;
-  const history = useHistory();*/
-  HideTab();
+  const history = useHistory();
   const [email, setEmail] = useState("test@test.com");
   const [password, setPassword] = useState("");
   const [errorInfo, setErrorInfo] = useState({});
+  HideTab();
   
-  /*const _doLogin = async () => {
-    try {
-      let r = await store.doLogin(email, password);
-      if (r.code) {
-        throw r;
-      }
-      setErrorInfo({});
-      return history.push("/tabs/home");
-    } catch (e) {
-      setErrorInfo({ showErrorToast: true, errMsg: e.message });
-      return false;
-    }
-  };*/
+  const _doLogin = async () => {
+      return history.push("/home");
+  };
 
   return (
     <IonPage>
@@ -107,7 +97,7 @@ const Login = () => {
                 return;
               }
               e.preventDefault();
-              /*_doLogin(history);*/
+              _doLogin();
             }}
           >
             Login {/*isAuth ? "Logged In" : "Login"*/}

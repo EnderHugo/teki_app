@@ -1,22 +1,63 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonLabel, IonPage, IonSlide, IonSlides, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { showTabs } from '../../../App';
 import ExploreContainer from '../../../components/ExploreContainer';
 import '../tabPages.css';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y, EffectCards } from 'swiper';
+import 'swiper/css';
+import "swiper/css/pagination";
+
+const ShowTab = () => {
+  useIonViewWillEnter(() => showTabs())
+}
+
+
 
 const Home: React.FC = () => {
+
+  showTabs();
+
   return (
+    
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color={"primary"}>
           <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
+      
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Home</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Home page" />
+          <div id='background'>
+
+            <IonLabel>
+              <br/>
+              <h1>Tipo de atendimento</h1>
+              <br/>
+            </IonLabel>
+          
+            <div id='slider'>
+            <Swiper
+            spaceBetween={10}
+            pagination={{
+              dynamicBullets: true,
+              clickable: true
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+            >
+              <SwiperSlide>Slide 1</SwiperSlide>
+              <SwiperSlide>Slide 2</SwiperSlide>
+              <SwiperSlide>Slide 3</SwiperSlide>
+              <SwiperSlide>Slide 4</SwiperSlide>
+              <SwiperSlide>Slide 5</SwiperSlide>
+              <SwiperSlide>Slide 6</SwiperSlide>
+              <SwiperSlide>Slide 7</SwiperSlide>
+              <SwiperSlide>Slide 8</SwiperSlide>
+              <SwiperSlide>Slide 9</SwiperSlide>
+            </Swiper>
+            </div>
+
+          </div>
       </IonContent>
     </IonPage>
   );
