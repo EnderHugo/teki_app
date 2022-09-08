@@ -17,9 +17,19 @@ const Home: React.FC = () => {
   return (
     
     <IonPage>
-      <IonHeader>
+      <IonHeader id='header'>
         <IonToolbar color={"primary"}>
-          <IonTitle>Home</IonTitle>
+        <Swiper
+            spaceBetween={10}
+            slidesPerView={3}
+            className="mySwiper"
+            >
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+            </Swiper>
         </IonToolbar>
       </IonHeader>
       
