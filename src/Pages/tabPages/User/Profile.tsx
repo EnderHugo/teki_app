@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonHeader, IonImg, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../../../components/ExploreContainer';
 import '../tabPages.css';
 
@@ -7,16 +7,28 @@ const Profile: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Profile</IonTitle>
+          <IonTitle>Perfil</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Profile</IonTitle>
-          </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Profile page" />
+          <div id='profile-top'>
+            <IonRow>
+              <IonCol size='auto'>
+                <div id='circle'>
+                  <IonImg src='assets/placeholder.jpg' id='roundImage'></IonImg>
+                </div>
+              </IonCol>
+              <IonCol>
+                <IonLabel id='profileNameLabel'> Nome do Usuario </IonLabel>
+                <br/>
+                <IonLabel id='profileRatingLabel'> Avaliação </IonLabel>
+              </IonCol>
+            </IonRow>
+          </div>
+
+
       </IonContent>
     </IonPage>
   );

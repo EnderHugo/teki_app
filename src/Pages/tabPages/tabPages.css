@@ -78,9 +78,37 @@ ion-datetime {
 }
 
 #techslide{
-    border-radius: 200px;
-    color: black;
+    border-radius: 50%;
     height: 50px;
-    width: 2000px;
+    width: 50px;
     margin: 10px;
+}
+
+#circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 5%;
+    margin-top: 6%;
+    margin-right: 5%;
+    margin-bottom: 6%;
+    overflow: hidden;
+}
+
+#roundImage{
+    width: 155px;
+}
+
+#profile-top{
+    width: 100%;
+    height: 21%;
+    background-color: #78A9FF;
+}
+
+#profileNameLabel{
+    color: #f5f5f5;
+}
+
+#profileRatingLabel{
+    color: #f5f5f5;
 }

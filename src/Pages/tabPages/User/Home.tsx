@@ -21,9 +21,13 @@ const Home: React.FC = () => {
         <IonToolbar color={"primary"}>
         <Swiper
             spaceBetween={10}
-            slidesPerView={3}
-            className="mySwiper"
+            slidesPerView={6}
             >
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
+              <SwiperSlide id='techslide'> </SwiperSlide>
               <SwiperSlide id='techslide'> </SwiperSlide>
               <SwiperSlide id='techslide'> </SwiperSlide>
               <SwiperSlide id='techslide'> </SwiperSlide>
