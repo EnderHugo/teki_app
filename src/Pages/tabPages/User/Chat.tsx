@@ -6,17 +6,11 @@ const Chat: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Chat</IonTitle>
+        <IonToolbar color={'primary'}>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Chat</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Chat page" />
+
       </IonContent>
     </IonPage>
   );

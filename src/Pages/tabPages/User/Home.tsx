@@ -1,16 +1,50 @@
-import { IonContent, IonHeader, IonLabel, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonInfiniteScroll, IonInfiniteScrollContent, IonLabel, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import { showTabs } from '../../../App';
 import '../tabPages.css';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper';
 import 'swiper/css';
 import "swiper/css/pagination";
+import { useState } from 'react';
+
+
 
 const ShowTab = () => {
   useIonViewWillEnter(() => showTabs())
 }
 
 const Home: React.FC = () => {
+
+  const [data, setData] = useState<string[]>([]);
+  const [isInfiniteDisabled, setInfiniteDisabled] = useState(false);
+  
+  const pushData = () => {
+    const max = data.length + 20;
+    const min = max - 20;
+    const newData = [];
+    for (let i = min; i < max; i++) {
+      newData.push('Item' + i);
+    }
+    
+    setData([
+      ...data,
+      ...newData
+    ]);
+  }
+  const loadData = (ev: any) => {
+    setTimeout(() => {
+      pushData();
+      console.log('Loaded data');
+      ev.target.complete();
+      if (data.length === 1000) {
+        setInfiniteDisabled(true);
+      }
+    }, 500);
+  }  
+  
+  useIonViewWillEnter(() => {
+    pushData();
+  });
 
   showTabs();
 
@@ -19,21 +53,12 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader id='header'>
         <IonToolbar color={"primary"}>
-        <Swiper
-            spaceBetween={10}
-            slidesPerView={6}
-            >
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-              <SwiperSlide id='techslide'> </SwiperSlide>
-            </Swiper>
+          <IonInfiniteScroll id='scrolling-wrapper'>
+            <IonInfiniteScrollContent
+              loadingSpinner="bubbles"
+              loadingText="...">
+            </IonInfiniteScrollContent>
+          </IonInfiniteScroll>
         </IonToolbar>
       </IonHeader>
       
