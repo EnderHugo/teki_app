@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonInfiniteScroll, IonInfiniteScrollContent, Ion
 import { showTabs } from '../../../App';
 import '../tabPages.css';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper';
+import { EffectCreative, Pagination } from 'swiper';
 import 'swiper/css';
 import "swiper/css/pagination";
 import { useState } from 'react';
@@ -78,7 +78,9 @@ const Home: React.FC = () => {
               dynamicBullets: true,
               clickable: true
             }}
-            modules={[Pagination]}
+            creativeEffect={{
+            }}
+            modules={[Pagination, EffectCreative]}
             className="mySwiper"
             >
               <SwiperSlide>Slide 1</SwiperSlide>
