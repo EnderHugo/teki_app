@@ -34,7 +34,7 @@ const Settings: React.FC = () => {
             </IonItem> 
             <IonItem button detail={true}
             onClick={_terms}>  
-              <IonIcon icon={documentText}></IonIcon>
+              <IonIcon icon={documentText}/> <IonTitle size='small'>Termos de serviço</IonTitle>
             </IonItem>
             <IonItem button detail={true}>  
               <IonIcon icon={card}></IonIcon>

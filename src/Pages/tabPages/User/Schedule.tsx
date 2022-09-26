@@ -16,8 +16,9 @@ const Schedule: React.FC = () => {
         <div id='background'>
           <IonDatetime size='cover' name='calendar' presentation='date' showDefaultTimeLabel={true}></IonDatetime>
           <div id='displaytab'>
-    
+            
           </div>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
       </IonContent>
     </IonPage>

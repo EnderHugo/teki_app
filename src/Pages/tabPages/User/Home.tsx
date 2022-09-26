@@ -81,7 +81,7 @@ const Home: React.FC = () => {
             creativeEffect={{
             }}
             modules={[Pagination, EffectCreative]}
-            className="mySwiper"
+            className="mainSwiper"
             >
               <SwiperSlide>Slide 1</SwiperSlide>
               <SwiperSlide>Slide 2</SwiperSlide>
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
               <SwiperSlide>Slide 9</SwiperSlide>
             </Swiper>
             </div>
-
+            <br/><br/>
           </div>
       </IonContent>
     </IonPage>

@@ -56,6 +56,10 @@ ion-label{
     --swiper-theme-color: white;
 }
 
+.mainSwiper{
+    height: 494px;
+}
+
 #primary-color{
     background-color: #0f62fe;
     color: white;
