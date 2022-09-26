@@ -1,24 +1,52 @@
-import { IonContent, IonDatetime, IonHeader, IonLabel, IonPage} from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react'
-import * as swiper from 'swiper';
+import { IonAvatar, IonBackButton, IonButtons, IonContent, IonDatetime, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import 'swiper/css';
 import "swiper/css/navigation";
 import '../tabPages.css';
+import { analytics, card, documentText, informationCircle, lockClosed } from 'ionicons/icons';
+import { useHistory } from 'react-router';
 
 
-const Schedule: React.FC = () => {
+const Settings: React.FC = () => {
+  const history = useHistory();
+  const _terms = async () => {
+    history.push("/terms");
+ };
   return (
     <IonPage>
-      <IonHeader id='header'>
+       
+      <IonHeader>
+        <IonToolbar color={'primary'}>
+          <IonButtons slot="start">
+            <IonBackButton color={'light'}/>
+            <IonTitle>Configurações</IonTitle>
+          </IonButtons>
+        </IonToolbar>
       </IonHeader>
       
       <IonContent fullscreen>
-        <div id='background'>
-          
-        </div>
+          <IonList lines='full'>
+
+            <IonItem button detail={true}>  
+              <IonIcon icon={analytics}></IonIcon>
+            </IonItem>
+            <IonItem button detail={true}>  
+             <IonIcon icon={lockClosed}></IonIcon>
+            </IonItem> 
+            <IonItem button detail={true}
+            onClick={_terms}>  
+              <IonIcon icon={documentText}></IonIcon>
+            </IonItem>
+            <IonItem button detail={true}>  
+              <IonIcon icon={card}></IonIcon>
+            </IonItem> 
+            <IonItem button detail={true} lines='none'>  
+              <IonIcon icon={informationCircle}></IonIcon>
+            </IonItem>
+            
+          </IonList>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Schedule;
+export default Settings;

@@ -23,6 +23,7 @@ import Schedule from './Pages/tabPages/User/Schedule';
 import Profile from './Pages/tabPages/User/Profile';
 import Chat from './Pages/tabPages/User/Chat';
 import Settings from './Pages/tabPages/User/Settings';
+import Terms from './Pages/tabPages/User/Terms';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -99,6 +100,10 @@ const App: React.FC = () => (
 
           <Route path="/Settings">
             <Settings />
+          </Route>
+
+          <Route path="/Terms">
+            <Terms />
           </Route>
 
           <Route exact path="/">

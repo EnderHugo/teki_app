@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonImg, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAvatar, IonButton, IonCol, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonList, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { pencil, settings, star } from 'ionicons/icons';
 import React, { useState } from 'react';
 import ExploreContainer from '../../../components/ExploreContainer';
@@ -25,10 +25,10 @@ const Profile: React.FC = () => {
         <IonHeader>
             <div id='profile-top'>
                 <IonRow>
-                  <IonCol size='auto'>
-                    <div id='circle'>
-                      <IonImg src='assets/placeholder.png' id='roundImage'></IonImg>
-                    </div>
+                  <IonCol size=''>
+                    <IonAvatar >
+                      <br/><IonImg src='assets/placeholder.png' id='roundImage'></IonImg>
+                    </IonAvatar>
                   </IonCol>
                   <IonCol>
                     <br/>
@@ -49,6 +49,17 @@ const Profile: React.FC = () => {
               <IonFabButton id='editbutton'>
                 <IonIcon icon={pencil}></IonIcon>
               </IonFabButton>
+            </div>
+            <br/>
+            <div id='profile-stats'>
+              <IonLabel>Historico</IonLabel> <br/><br/>
+            
+              <IonList lines='full'>
+                <IonItem></IonItem>
+                <IonItem></IonItem>
+                <IonItem></IonItem>
+              </IonList>
+
             </div>
           </div>
 
