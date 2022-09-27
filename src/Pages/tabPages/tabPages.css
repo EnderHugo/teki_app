@@ -70,6 +70,7 @@ ion-label{
     color: white;
 }
 
+
 ion-datetime {
     --background: white;
     width: 100%;
@@ -78,7 +79,7 @@ ion-datetime {
 }
 
 #displaytab{
-    height: 30%;
+    height: 35%;
     border-radius: 30px;
     background-color: #ffffff;
     position: absolute;

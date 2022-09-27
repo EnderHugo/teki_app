@@ -1,11 +1,21 @@
-import { IonContent, IonHeader, IonInfiniteScroll, IonInfiniteScrollContent, IonLabel, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonInfiniteScroll, IonInfiniteScrollContent, IonLabel, IonLoading, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import { showTabs } from '../../../App';
 import '../tabPages.css';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative, Pagination } from 'swiper';
 import 'swiper/css';
 import "swiper/css/pagination";
+import LoadingIcons from 'react-loading-icons'
 import { useState } from 'react';
+import SpinningCircles from 'react-loading-icons/dist/esm/components/spinning-circles';
+import Oval from 'react-loading-icons/dist/esm/components/oval';
+import Hearts from 'react-loading-icons/dist/esm/components/hearts';
+import Rings from 'react-loading-icons/dist/esm/components/rings';
+import Puff from 'react-loading-icons/dist/esm/components/puff';
+import ThreeDots from 'react-loading-icons/dist/esm/components/three-dots';
+import TailSpin from 'react-loading-icons/dist/esm/components/tail-spin';
+import Bars from 'react-loading-icons/dist/esm/components/bars';
+import BallTriangle from 'react-loading-icons/dist/esm/components/ball-triangle';
 
 
 
@@ -53,12 +63,15 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader id='header'>
         <IonToolbar color={"primary"}>
-          <IonInfiniteScroll id='scrolling-wrapper'>
-            <IonInfiniteScrollContent
-              loadingSpinner="bubbles"
-              loadingText="...">
-            </IonInfiniteScrollContent>
-          </IonInfiniteScroll>
+            <IonContent>
+              <IonInfiniteScroll id='scrolling-wrapper'>
+                <IonInfiniteScrollContent
+                  loadingSpinner="bubbles"
+                  loadingText="...">
+                </IonInfiniteScrollContent>
+              </IonInfiniteScroll>
+            </IonContent>
+          <Oval style={{'margin':'14px'}}/>
         </IonToolbar>
       </IonHeader>
       

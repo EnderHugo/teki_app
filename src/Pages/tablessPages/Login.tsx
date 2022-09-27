@@ -116,7 +116,7 @@ const Login = () => {
 
       <IonFooter>
               <div className="ion-text-right">
-          <IonItem href='/Register' style={{"padding-left":"30px","padding-right":"30px","text-align":"center"}}>
+          <IonItem href='/Register' style={{"paddingleft":"30px","paddingright":"30px","textalign":"center"}}>
                 Não tem uma conta? &nbsp; <b>Cadastre-se</b>
           </IonItem> 
               </div>
