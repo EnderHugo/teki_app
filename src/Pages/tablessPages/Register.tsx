@@ -73,7 +73,7 @@ const Register: React.FC = () => {
                 First Content
               </div>
             </IonAccordion>
-            <IonAccordion value="company" toggleIcon=''>
+            <IonAccordion value="company" toggleIcon='' disabled>
               <IonItem slot="header" color="secondary">
                 <IonIcon icon={business}></IonIcon>
                 <IonLabel>&nbsp; Empresarial</IonLabel>

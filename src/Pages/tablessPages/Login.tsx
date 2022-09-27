@@ -13,7 +13,8 @@ import {
   IonContent,
   IonFooter,
   IonIcon,
-  useIonViewWillEnter, } from '@ionic/react';
+  useIonViewWillEnter,
+  IonImg, } from '@ionic/react';
 
 import './tablessPages.css';
 import React, { useState } from 'react';
@@ -49,20 +50,9 @@ const Login = () => {
         <IonText color="danger" style={{ fontWeight: "500" }}>
           {/*initializationError && initializationError.message*/}
         </IonText> 
-
-        <div style={{"height":"100px"}}>
-        </div>
-        <br/>
-        
         <div className="ion-text-center">
-        <IonText>Logo Here</IonText>
+          <IonImg src='assets/teki.png' style={{ 'height':'250px' }}></IonImg>
         </div>
-
-        <br/>
-
-        <div style={{"height":"50px"}}>
-        </div>
-
         <IonItem>
           <IonLabel position="floating">Email</IonLabel>
           <IonInput
