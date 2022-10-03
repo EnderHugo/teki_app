@@ -1,4 +1,4 @@
-import { IonContent, IonDatetime, IonHeader, IonLabel, IonPage, IonText} from '@ionic/react';
+import { IonButton, IonContent, IonDatetime, IonHeader, IonLabel, IonPage, IonText} from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import * as swiper from 'swiper';
 import 'swiper/css';
@@ -31,6 +31,7 @@ const Schedule: React.FC = () => {
           <IonDatetime size='cover' name='calendar' presentation='date' showDefaultTimeLabel={true} ref={datetime} multiple={true} contentEditable={false}></IonDatetime>
           
           <div id='displaytab'>
+            <br/>
             <ScheduledDate name='#NOME 1' date={date[0]} n={0} ></ScheduledDate>
             <ScheduledDate name='#NOME 2' date={date[1]} n={1} ></ScheduledDate>
           </div>

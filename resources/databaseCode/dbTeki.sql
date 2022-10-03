@@ -54,6 +54,17 @@ CREATE TABLE IF NOT EXISTS `tbEmpresarial` (
   PRIMARY KEY (`idEmpresarial`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+CREATE TABLE IF NOT EXISTS `tbFotosPerfil` (
+    `idFoto` INT(11) NOT NULL AUTO_INCREMENT,
+    `idUsuario` INT(11) NOT NULL,
+    `fotoData` MEDIUMBLOB NOT NULL,
+    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `modified` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_Fotos FOREIGN KEY (`idUsuario`)
+        REFERENCES tbUsuario (`idUsuario`),
+    PRIMARY KEY (`idFoto`)
+)  ENGINE=INNODB DEFAULT CHARSET=LATIN1 AUTO_INCREMENT=1;
+
 -- Grupo
 
 CREATE TABLE IF NOT EXISTS `tbGrupo` (
@@ -91,6 +102,16 @@ CREATE TABLE IF NOT EXISTS `tbAdmGrupo` (
 
 -- tags
 
+CREATE TABLE IF NOT EXISTS `tbTags` (
+  `idTag` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(220) NOT NULL,
+  `desc` varchar(220) NOT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  
+  PRIMARY KEY (`idTag`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 CREATE TABLE IF NOT EXISTS `tbEspecializacao` (
   `idEsp` int(11) NOT NULL AUTO_INCREMENT,
   `idPrestServ` int(11) NOT NULL,
@@ -104,32 +125,7 @@ CREATE TABLE IF NOT EXISTS `tbEspecializacao` (
   PRIMARY KEY (`idEsp`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `tbTags` (
-  `idTag` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(220) NOT NULL,
-  `desc` varchar(220) NOT NULL,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  
-  PRIMARY KEY (`idTag`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
 -- registros
-
-CREATE TABLE IF NOT EXISTS `tbRegistrosServ` (
-  `idAtendimento` int(11) NOT NULL AUTO_INCREMENT,
-  `idPrestador` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
-  `valor` DOUBLE(11, 2) NOT NULL,
-  `dataAgnd` DATETIME NOT NULL,
-  `dataAtnd` DATETIME NOT NULL,
-  `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-
-  CONSTRAINT fk_RegistrosPrestador FOREIGN KEY (`idPrestador`) REFERENCES tbPrestServ(`idPrestServ`),
-  CONSTRAINT fk_RegistrosCliente FOREIGN KEY (`idCliente`) REFERENCES tbCliente(`idCliente`),
-  PRIMARY KEY (`idAtendimento`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `tbRegistrosEmp` (
   `idAtendimento` int(11) NOT NULL AUTO_INCREMENT,
@@ -146,4 +142,17 @@ CREATE TABLE IF NOT EXISTS `tbRegistrosEmp` (
   PRIMARY KEY (`idAtendimento`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+CREATE TABLE IF NOT EXISTS `tbRegistrosServ` (
+  `idAtendimento` int(11) NOT NULL AUTO_INCREMENT,
+  `idPrestador` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `valor` DOUBLE(11, 2) NOT NULL,
+  `dataAgnd` DATETIME NOT NULL,
+  `dataAtnd` DATETIME NOT NULL,
+  `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 
+  CONSTRAINT fk_RegistrosPrestador FOREIGN KEY (`idPrestador`) REFERENCES tbPrestServ(`idPrestServ`),
+  CONSTRAINT fk_RegistrosCliente FOREIGN KEY (`idCliente`) REFERENCES tbUsuario(`idUsuario`),
+  PRIMARY KEY (`idAtendimento`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

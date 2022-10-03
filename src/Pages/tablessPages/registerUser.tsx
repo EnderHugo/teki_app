@@ -9,10 +9,11 @@ const HideTab = () => {
 }
 
 const Register: React.FC = () => {
-  const [showToast1, setShowToast] = useState(false);
-  const [showToast2, setShowToast2] = useState(false);
-  const [showToast3, setShowToast3] = useState(false);
-  const [showToast4, setShowToast4] = useState(false);
+  const [CampoInvalido, setShowToast] = useState(false);
+  const [ConfInvalida, setShowToast2] = useState(false);
+  const [EmailInvalido, setShowToast3] = useState(false);
+  const [SenhaInvalida, setShowToast4] = useState(false);
+  const [NumeroInvalido, setShowToast5] = useState(false);
 
   const listenerOut = useRef<null | HTMLParagraphElement>(null);
   const [email, setEmail] = useState("test@test.com");
@@ -38,6 +39,10 @@ const Register: React.FC = () => {
     }
     else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email + "")){
       setShowToast3(true);
+      return;
+    }
+    else if(!/^([0-9]+-+[0-9]{4,})$/i.test(cellphone + "")&&!/^([0-9]{8,})$/i.test(cellphone + "")){
+      setShowToast5(true);
       return;
     }
     else if (password1 !== password2 && password1 !== "" && password2 !== "")
@@ -112,7 +117,7 @@ const Register: React.FC = () => {
               type="password"
               onIonChange={(e) => {
                 setPassword1(e.detail.value + "");
-                if (password1 !== "")
+                if (password1 != "")
                 {
                   setEnablePass2(false);
                 }
@@ -136,27 +141,33 @@ const Register: React.FC = () => {
       </IonContent>
 
       <IonFooter>
-        <IonToast isOpen={showToast1}
+        <IonToast isOpen={CampoInvalido}
           onDidDismiss={() => setShowToast(false)}
           message="Preencha todos os campos."
           duration={500}
           color="warning"
         />
-        <IonToast isOpen={showToast2}
+        <IonToast isOpen={ConfInvalida}
           onDidDismiss={() => setShowToast2(false)}
           message="Senha não bate com a confirmação."
           duration={500}
           color="warning"
         />
-        <IonToast isOpen={showToast3}
+        <IonToast isOpen={EmailInvalido}
           onDidDismiss={() => setShowToast3(false)}
           message="Email invalido."
           duration={500}
           color="warning"
         />
-        <IonToast isOpen={showToast4}
+        <IonToast isOpen={SenhaInvalida}
           onDidDismiss={() => setShowToast4(false)}
           message="Senha inválida."
+          duration={500}
+          color="warning"
+        />
+        <IonToast isOpen={NumeroInvalido}
+          onDidDismiss={() => setShowToast5(false)}
+          message="Numero inválido."
           duration={500}
           color="warning"
         />
