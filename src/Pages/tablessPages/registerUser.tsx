@@ -3,6 +3,8 @@ import './tablessPages.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { hideTabs } from '../../App';
 import { useHistory } from 'react-router';
+import { register } from '../../serviceWorkerRegistration';
+import axios from 'axios';
 
 const HideTab = () => {
   useIonViewWillEnter(() => hideTabs())
@@ -59,7 +61,23 @@ const Register: React.FC = () => {
       setShowToast2(true);
       return;
     }
+    const obj = {
+      name : username,
+      email : email,
+      phone : cellphone,
+      password : password
+    }
     console.log("register user")
+
+    axios
+    .post('https://localhost/Teki/insert.php/', obj, {headers: { "Content-Type": "application/json" }})
+    .then(res=> {
+      console.log(res.data) 
+    })
+    .catch(error => {
+    console.log(error.response)
+    })
+
   }
 
 
