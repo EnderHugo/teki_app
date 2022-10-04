@@ -27,6 +27,11 @@ const Register: React.FC = () => {
   const [password2, setPassword2] = useState("");
 
   const [enablePass2, setEnablePass2] = useState(true);
+
+  const register = () => {
+    axios.post('http://localhost:3001/', {name: username, email: email, phone: cellphone, password: password})
+  }
+    
   
   const history = useHistory();
 
@@ -36,6 +41,10 @@ const Register: React.FC = () => {
   }, []);
   
   const registerUser = () => {
+    if (password1 === password2  && password1 !== "" && password2 !== "")
+      {
+        setPassword(password1)
+      }
     if (email === "" || username === "" || cellphone === ""){
       setShowToast(true);
     }
@@ -52,32 +61,17 @@ const Register: React.FC = () => {
       setShowToast2(true);
       return;
     }
-    else if (password1 === password2  && password1 !== "" && password2 !== "")
-    {
-      setPassword(password1)
-    }
     else if (password === "")
     {
-      setShowToast2(true);
+      setShowToast4(true);
       return;
     }
-    const obj = {
-      name : username,
-      email : email,
-      phone : cellphone,
-      password : password
+    else
+    {
+      console.log("register user")
+      register();
+      return;
     }
-    console.log("register user")
-
-    axios
-    .post('https://localhost/Teki/insert.php/', obj, {headers: { "Content-Type": "application/json" }})
-    .then(res=> {
-      console.log(res.data) 
-    })
-    .catch(error => {
-    console.log(error.response)
-    })
-
   }
 
 

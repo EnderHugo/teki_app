@@ -106,6 +106,11 @@ const Register: React.FC = () => {
           color="warning"
         />
         <IonButton expand='block' onClick={nextRegisterPage}>Próximo</IonButton>
+        <div className="ion-text-right">
+              </div>
+          <IonItem href='/login' style={{"paddingleft":"30px","paddingright":"30px","textalign":"center"}}>
+                Já tem uma conta? &nbsp; <b>Log-in</b>
+          </IonItem> 
       </IonFooter>
 
     </IonPage>
